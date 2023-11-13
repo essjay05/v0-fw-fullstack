@@ -4,7 +4,7 @@ const http = require("http")
 const PORT = 8000
 
 // Create HTTP server
-const app = http.createapp((req, res) => {
+const app = http.createServer((req, res) => {
     // Set response HTTP header with HTTP status and Content type
     res.writeHead(200, {"Content-Type": "text/plain"})
 
