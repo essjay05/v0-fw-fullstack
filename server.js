@@ -1,11 +1,10 @@
 // Load HTTP module
 const http = require("http")
-
+// const express = require("express")
 const PORT = 8000
-const hostname = "127.0.0.1"
 
 // Create HTTP server
-const server = http.createServer((req, res) => {
+const app = http.createapp((req, res) => {
     // Set response HTTP header with HTTP status and Content type
     res.writeHead(200, {"Content-Type": "text/plain"})
 
@@ -14,6 +13,6 @@ const server = http.createServer((req, res) => {
 })
 
 // Prints a log once server starts listening
-server.listen(PORT, hostname, () => {
-    console.log(`Server running at http://${hostname}:${PORT}`)
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`)
 })
