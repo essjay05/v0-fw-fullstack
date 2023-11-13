@@ -1,15 +1,11 @@
-// Load HTTP module
-const http = require("http")
-
 const express = require("express")
-const PORT = 8000
+const PORT = 3000
 
 const app = express()
 
-// Create HTTP server
-const server = http.createServer(app)
+// Middleware
 
 // Prints a log once server starts listening
-server.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`)
 })
