@@ -5,13 +5,15 @@ const PORT = 3000
 const app = express()
 
 // Connect Routers
+const adminRoutes = require('./routes/admin')
 const userRoutes = require('./routes/user')
 const wheelRoutes = require('./routes/wheel')
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// Home Page
+// Routes
+app.use('/admin', adminRoutes)
 app.use(wheelRoutes)
 app.use(userRoutes)
 
