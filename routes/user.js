@@ -24,11 +24,7 @@ router.post('/user', (req, res, next) => {
 // Delete multiple users *admin only
 
 
-// Admin only routes
 
-// Read (get) all users *admin only
-
-// Update multiple users *admin only
 
 module.exports = router
 
