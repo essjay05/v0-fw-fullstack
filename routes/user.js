@@ -1,3 +1,5 @@
+const path = require('path')
+
 const express = require('express')
 
 const router = express.Router()
@@ -16,6 +18,9 @@ router.post('/user', (req, res, next) => {
 })
 
 // Read (get) 1 user
+router.get('/user', (req, res, next) => {
+    res.sendFile(path.join(__dirname, '..', 'views', 'user.html'))
+})
 
 // Update 1 user
 
