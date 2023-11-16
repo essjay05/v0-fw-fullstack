@@ -1,3 +1,5 @@
+const path = require('path')
+
 const express = require('express')
 
 const router = express.Router()
@@ -6,7 +8,7 @@ const router = express.Router()
 
 // Get 1 wheel (default/user's latest wheel)
 router.get('/', (req, res, next) => {
-    res.send(`<h1>What's Your Dish?</h1>`)
+    res.sendFile(path.join(__dirname, '..', 'views', 'wheel.html'))
 })
 
 // Get all wheels
