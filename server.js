@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require("express")
 const bodyParser = require("body-parser")
 const PORT = 3000
@@ -18,7 +19,7 @@ app.use(wheelRoutes)
 app.use(userRoutes)
 
 app.use((req, res, next) => {
-    res.status(404).send('<h1>Page Not Found</h1>')
+    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'))
 })
 
 // Prints a log once server starts listening
