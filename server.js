@@ -12,6 +12,7 @@ const wheelRoutes = require('./routes/wheel')
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 app.use('/admin', adminRoutes)
