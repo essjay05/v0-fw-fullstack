@@ -1,6 +1,5 @@
 const path = require('path')
 const express = require("express")
-const bodyParser = require("body-parser")
 const PORT = 4444
 
 const app = express()
@@ -26,14 +25,14 @@ app.use(userRoutes)
 
 // Test routes
 app.get('/profile', (req,res) => {
-    res.send('getting profile')
+    res.send('getting started')
 })
 
 app.post('/profile', (req,res) => {
     console.log(req.body)
     const user = {
-        name: 'Joy',
-        hobby: 'drawing'
+        name: 'Max',
+        hobby: 'sleeping'
     }
     res.send(user)
 })
