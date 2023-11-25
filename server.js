@@ -30,11 +30,8 @@ app.get('/profile', (req,res) => {
 
 app.post('/profile', (req,res) => {
     console.log(req.body)
-    const user = {
-        name: 'Max',
-        hobby: 'sleeping'
-    }
-    res.send(user)
+
+    res.send(`Success! User is: ${req.body.name}, Hobby is: ${req.body.hobby}`)
 })
 
 // Prints a log once server starts listening
