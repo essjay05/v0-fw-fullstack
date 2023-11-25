@@ -19,13 +19,17 @@ app.use('/admin', adminRoutes)
 app.use(wheelRoutes)
 app.use(userRoutes)
 
-// app.use((req, res, next) => {
-//     res.status(404).sendFile(path.join(__dirname, 'views', '404.html'))
-// })
+app.use((req, res, next) => {
+    res.status(404).sendFile(path.join(__dirname, 'public/views', '404.html'))
+})
 
 // Test routes
+app.get('/', (req, res) => {
+    req.query()
+})
+
 app.get('/profile', (req,res) => {
-    res.send('getting started')
+    res.send('getting profile')
 })
 
 app.post('/profile', (req,res) => {

@@ -19,10 +19,11 @@ router.post('/user', (req, res, next) => {
 
 // Read (get) 1 user
 router.get('/user', (req, res, next) => {
-    res.sendFile(path.join(__dirname, '..', 'views', 'user.html'))
+    res.sendFile(path.join(__dirname, '..', 'public/views', 'user.html'))
 })
 
 // Update 1 user
+// router.push('/user:id/')
 
 // Delete 1 user
 

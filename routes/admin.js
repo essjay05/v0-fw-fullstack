@@ -10,7 +10,7 @@ const router = express.Router()
 
 // Access Admin page
 router.get('/', (req, res, next) => {
-    res.status(200).sendFile(path.join(rootDir, 'views', 'admin.html'))
+    res.status(200).sendFile(path.join(rootDir, 'public/views', 'admin.html'))
 })
 
 // Read (get) all users *admin only
