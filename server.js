@@ -16,17 +16,21 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 app.use('/admin', adminRoutes)
-app.use(wheelRoutes)
-app.use(userRoutes)
+app.use('/api/wheel', wheelRoutes)
+app.use('/api/user', userRoutes)
 
+
+// Home route
+app.use('/', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'public/views', 'wheel.html'))
+})
+
+// Default 404 route (if route has no match)
 app.use((req, res, next) => {
     res.status(404).sendFile(path.join(__dirname, 'public/views', '404.html'))
 })
 
-// Test routes
-app.get('/', (req, res) => {
-    req.query()
-})
+
 
 app.get('/profile', (req,res) => {
     res.send('getting profile')
